@@ -49,7 +49,10 @@ def ingest_coffee(request):
         sa_info = json.loads(get_secret("GCP_SERVICE_ACCOUNT"))
         creds = Credentials.from_service_account_info(
             sa_info, 
-            scopes=["https://www.googleapis.com/auth/spreadsheets"]
+            scopes=[
+                "https://www.googleapis.com/auth/spreadsheets",
+                "https://www.googleapis.com/auth/drive"
+                ]
         )
         gc = gspread.authorize(creds)
 
