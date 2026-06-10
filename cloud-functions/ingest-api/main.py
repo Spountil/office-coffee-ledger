@@ -9,7 +9,6 @@ from fpdf import FPDF
 from google.cloud import secretmanager
 from google.oauth2.service_account import Credentials
 
-# Extract environment variables
 PROJECT_ID = os.environ.get("PROJECT_ID")
 
 if not PROJECT_ID:
