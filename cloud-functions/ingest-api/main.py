@@ -9,7 +9,10 @@ from fpdf import FPDF
 from google.cloud import secretmanager
 from google.oauth2.service_account import Credentials
 
-PROJECT_ID = "your-project-id-here" # REPLACE THIS
+PROJECT_ID = os.environ.get("PROJECT_ID")
+
+if not PROJECT_ID:
+    raise ValueError("Missing PROJECT_ID environment variable.")
 
 def get_secret(secret_id):
     """Fetches a secret payload from GCP Secret Manager."""

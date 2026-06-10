@@ -1,0 +1,15 @@
+steps:
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  args:
+  - gcloud
+  - functions
+  - deploy
+  - coffee-ingest-api
+  - --gen2
+  - --region=us-central1
+  - --source=./cloud-functions/ingest-api
+  - --entry-point=ingest_coffee
+  - --runtime=python310
+  - --trigger-http
+  - --allow-unauthenticated
+  - --set-env-vars=SENDER_EMAIL=${_SENDER_EMAIL},PROJECT_ID=$PROJECT_ID
