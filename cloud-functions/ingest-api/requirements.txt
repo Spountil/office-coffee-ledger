@@ -1,0 +1,4 @@
+functions-framework==3.*
+gspread==6.1.0
+google-cloud-secret-manager==2.16.2
+fpdf2==2.7.9
