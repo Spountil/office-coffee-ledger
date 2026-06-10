@@ -13,3 +13,7 @@ steps:
   - --trigger-http
   - --allow-unauthenticated
   - --set-env-vars=SENDER_EMAIL=${_SENDER_EMAIL},PROJECT_ID=$PROJECT_ID
+
+# Help avoid the logging error in Cloud Build when deploying the function
+options:
+  logging: CLOUD_LOGGING_ONLY
